@@ -1,0 +1,11 @@
+{
+  "name": "HelloIonic",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.0.0",
+    "ionic-service-push": "~0.1.8",
+    "ionic-service-analytics": "master",
+    "ionic-service-core": "~0.1.7",
+    "ionic-service-deploy": "~0.1.0"
+  }
+}

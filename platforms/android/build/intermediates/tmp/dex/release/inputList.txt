@@ -1,0 +1,4 @@
+/Users/gzileni/GitHub/HateTraffic/platforms/android/build/intermediates/classes/release
+/Users/gzileni/GitHub/HateTraffic/platforms/android/build/intermediates/pre-dexed/release/gcm-6e7dc8a7ff6aafb6d266c876ee334b1469b981ef.jar
+/Users/gzileni/GitHub/HateTraffic/platforms/android/build/intermediates/pre-dexed/release/classes-62533f65977eb353afd1bea2590450d7255dbc11.jar
+/Users/gzileni/GitHub/HateTraffic/platforms/android/build/intermediates/pre-dexed/release/android-support-v13-b61fc7155373eb1b87116b0f3b416205d99213e9.jar

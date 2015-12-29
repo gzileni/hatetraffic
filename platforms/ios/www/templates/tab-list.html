@@ -1,0 +1,59 @@
+<ion-view view-title="Traffic">
+  <ion-content class="padding" class="has-header">
+
+    <ion-refresher on-refresh="refresh(true)" pulling-text="Scorri per Leggere i dati"></ion-refresher>
+
+    <div class="card" ng-show="view_error">
+        <div class="item item-text-wrap">
+            <i class="icon ion-alert-circled"></i> {{ error }}
+        </div>
+        <button class="button button-full button-positive" ng-click="refresh(true)">
+            Riprova
+        </button>
+    </div>
+
+    <div class="list">
+        <div class="item item-divider">
+            Parcheggio più vicino
+        </div>
+        <a class="item item-thumbnail-left" href="#">
+          <img src="img/parking/parking.png">
+          <h2>{{ parking.name }}</h2>
+          <p><img ng-src="{{ parking.park | parking_img }}" /> {{ parking.park | parking }}</p>
+          <p>{{ parking.time | date }}<br />
+          Distanza: {{ parking.location | distance }}</p>
+        </a>
+    </div>
+
+    <ion-list>
+    	<ion-item collection-repeat="traffic in trafficlist">
+
+            <div class="list card">
+	    		<a class="item item-avatar item-text-wrap" href="#">
+			      <img ng-src="{{ traffic.ValoreIndiceTempoPercorrenza | level_image }}">
+			      <h2>{{ traffic.Poi.Descrizione }}</h2>
+			      <h3>{{ traffic.ValoreIndiceTempoPercorrenza | level_descr }}</h3>
+			      <p>{{ traffic.Timestamp.TimestampAggiornamentoTraffico | date }}</p>
+			    </a>
+			    <div class="item tabs tabs-secondary tabs-icon-left">
+                    <a class="tab-item" href="#" ng-click="share('twitter',traffic)">
+                      <i class="icon ion-social-twitter"></i>
+                    </a>
+                    <a class="tab-item" ng-click="share('facebook',traffic)">
+                        <i class="icon ion-social-facebook"></i>
+                    </a>
+                    <a class="tab-item" ng-click="share('whatsapp',traffic)">
+                        <i class="icon ion-social-whatsapp"></i>
+                    </a>
+                </div>
+		    </div>
+    	</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+
+<!--
+
+{"NumTransiti":1,"Poi":{"Codice":"VIALE_EUROPA_001","Descrizione":"Viale Europa, Canalone verso San Paolo","Latitudine":41.1239585876465,"Longitudine":16.8316326141357},"Timestamp":{"TimestampAggiornamentoTraffico":"2015-06-26T21:20:39Z","TimestampRichiesta":"2015-06-26T21:20:57Z"},"ValoreIndiceTempoPercorrenza":2}
+
+-->
